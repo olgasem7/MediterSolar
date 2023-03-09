@@ -24,7 +24,7 @@ Si quieres hechas un vistazo al proyecto, te recomiendo:
 
 ![Captura del proyecto](https://github.com/olgasem7/MediterSolar/blob/main/img/Screenshot_2.png?raw=true)
 ![Captura del proyecto](https://github.com/olgasem7/MediterSolar/blob/main/img/Screenshot_3.png?raw=true)
-![Captura del proyecto](https://github.com/eduardofierropro/Portafolio-y-CV/blob/main/CAPTURA-DEL-PROYECTO.jpg?raw=true)
+![Captura del proyecto](https://github.com/olgasem7/MediterSolar/blob/main/img/Screenshot_4.png?raw=true)
 
 ## Autor ✒️
 **Olga**
