@@ -1,5 +1,5 @@
 # Mediteranean Solar
-![Imagen del proyecto](https://github.com/eduardofierropro/Portafolio-y-CV/blob/main/IMAGEN-DEL-PROYECTO.jpg?raw=true)
+![Imagen del proyecto](https://github.com/olgasem7/MediterSolar/blob/main/img/Screenshot_1.png?raw=true)
 
 ## Ejemplo en vivo
 - [https://olgasem7.github.io/MediterSolar/](https://olgasem7.github.io/MediterSolar/)
