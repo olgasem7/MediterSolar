@@ -1,0 +1,51 @@
+$sizeS:1rem;
+$sizeM:2.5rem;
+$sizeL:5rem;
+$sizeXL:10rem;
+
+// colores
+
+$light_green:#e1f7f6;
+$light_green_opacity:rgb(188 233 226 / 26%);
+
+$medium_green: #54b7b1;
+$green:#31cac5;
+$dark_green:#00b9b3;
+$blue:#0089e0;
+$light_blue:#dff9ff;
+$dark_blue:#0047c3;
+
+$gradient_green:linear-gradient(to right, rgb(182, 244, 146), rgb(51, 139, 147));
+
+$regular: 'Karla Regular';
+$light:'Karla Light';
+$heading_bold:'Montserrat Bold';
+$heading_medium:'Montserrat Medium';
+
+@font-face {
+    font-family: 'Karla Regular';
+    src:url(./fonts/karla/Karla-Regular.ttf);
+    font-weight: normal;
+    font-size:medium;
+
+}
+@font-face {
+    font-family: 'Karla Light';
+    src:url(./fonts/karla/Karla-Light.ttf) format("truetype");
+    font-weight:light;
+    font-size:medium;
+
+}
+@font-face {
+    font-family: 'Montserrat Bold';
+    src:url(./fonts/montserrat/Montserrat-Bold.ttf);
+    font-weight:bold;
+    font-size:medium;
+
+}
+@font-face {
+    font-family: 'Montserrat Medium';
+    src:url(./fonts/montserrat/Montserrat-Medium.ttf);
+    font-weight:medium;
+    font-size:medium;
+}

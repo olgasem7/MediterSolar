@@ -1,0 +1,942 @@
+@use'scss/abstract/variables' as *;
+@use'scss/abstract/flex' as *;
+@use'scss/abstract/responsive' as *;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Montserrat', 'Karla' ;
+}
+li{
+    list-style: none;
+}
+.wrapper{
+    max-width: 1140px;
+    width: 100%;
+    margin:auto;
+    flex-wrap: wrap;
+    @include corte(portatil){
+        width: 90%;
+    }
+    @include corte(tablet){
+        width: 90%;
+    }
+    @include corte(movil){
+        width: 90%;
+    }
+}
+.col33{
+    flex-basis: 30%;
+    @include corte(tablet){
+        flex-basis: 50%;
+    }
+    @include corte(movil){
+        flex-basis: 100%;
+    }
+   
+}
+.col50{
+    flex-basis: 48%;
+    @include corte(tablet){
+        flex-basis: 100%;
+    }
+    @include corte(movil){
+        flex-basis: 100%;
+    }
+}
+.nav.bar{
+    
+    position:fixed;
+    width: 100%;
+    z-index: 999;
+}
+.activo{
+    background-color:$green;
+}
+
+// .nav-colored { background-color:#31cac5; }
+// .nav-transparent { background-color:transparent;}
+h2{
+    font-size: 30px;
+    font-family: $heading_bold;
+    margin-bottom: 2rem;
+    @include corte(tablet){
+        font-size: 2.5rem;
+    }
+    @include corte(movil){
+        font-size: 2rem;
+    }
+}
+h3{
+    font-size: 20px;
+    font-family: $heading_bold;
+    margin-bottom: 2rem;
+
+}
+p{
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    font-family: $light;
+    @include corte(tablet){
+        font-size: 1.8rem;
+    }
+    @include corte(movil){
+        font-size: 1.8rem;
+    }
+}
+.btnS{padding: 12px 56px;
+    background-color: $green;
+    color:$light_blue;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 1.6rem;
+    display: inline-block;
+    font-family: $regular;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    transition: 0.5s;
+    &:hover{
+        background: rgb(0,71,195);
+    }
+}
+
+.titulo{
+    font-family:$heading_bold;
+    font-size: 3rem;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 6rem; 
+    text-align: center;
+    width: 100%;
+    @include corte(tablet){
+        font-size: 2.5rem;
+        margin: 3rem;
+    }
+    @include corte(movil){
+        font-size: 2.2rem;
+        margin: 3rem;
+    }
+&::after{
+    content: '';
+    display: block;
+    width: 15%;
+    height: 1px;
+    background-color: rgb(17 17 17 / 100%);
+    margin-left: 1rem;
+}
+&::before{
+    content: '';
+    display: block;
+    width: 15%;
+    height: 1px;
+    background-color: rgb(17 17 17 / 100%);
+    margin-right: 1rem;  
+} 
+}  
+    
+html{
+    font-size: 62.5%;
+}
+.menu.lista{
+    .logo{
+        width: 18%;
+        @include corte(movil){
+            width: 25%;
+        }
+
+    }
+    img{
+        margin-left: 1rem;
+        width:30%;
+        padding: 1rem 0rem;
+        @include corte(tablet){
+            width: 50%;
+        }
+        @include corte(movil){
+            width: 50%;
+        }
+
+        
+    }
+    .menuli{
+        width: 80%;
+        display: inline-block;
+        @include corte(portatil){
+            display: none;
+        }
+        @include corte(tablet){
+            display: none;
+        }
+        @include corte(movil){
+            display: none;
+        }
+
+    }
+    .icon_menu{
+        display: none;
+        a{
+            font-size: 2.5rem;
+            color: $light_blue;
+            padding: 0 2rem;
+        }
+        @include corte(portatil){
+            display: block;
+        }
+        @include corte(tablet){
+            display: block;
+        }
+        @include corte(movil){
+            display: block;
+        }
+    }
+    ul{
+        list-style: none;
+        display: flex;
+        // gap: 3rem;
+        padding-top:2rem ;
+        padding-bottom: 2rem;
+        width: 100%;
+        li{
+            
+            font-size: 1.8rem; 
+        }
+       
+        a{
+            text-decoration: none;
+            transition: 0.3s;
+            color:$light_blue;
+            font-family: $heading_medium;
+            padding-right: 1rem;
+            &:hover{
+                color: $dark_blue;
+            }
+
+        }
+        
+    }
+}
+.menu_hamburgesa{
+    .icon_cross{
+        width: 100%;
+        justify-content: right;
+        a{
+            padding:1rem;
+            padding-right: 2rem;
+        }
+
+        i{
+            font-size: 2.2rem;
+            color:$dark_blue;
+        }   
+    }
+    
+    display:inline-block;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100vh;
+    background-color: $light_green;
+    z-index: 22;
+    padding-top: 1.5rem;
+    transition: 0.3s;
+    .color_blue{
+        color: $dark_blue;
+                
+    }
+    ul{
+        flex-direction: column;
+        list-style: none;
+        li{
+            padding-top:2rem;
+            padding-bottom: 2rem;
+            a{
+                color: $dark_blue;
+                text-decoration: none;
+                transition: 0.3s;
+                font-family: $heading_medium;
+                padding-right: 1rem;
+                font-size: 2rem;
+                &:hover{
+                    color: $dark_blue;
+                }
+                
+            }       
+            
+        }
+    }
+}
+.show{
+    left: 0; 
+}
+
+
+.img_animacion{
+    width: 40%;
+    position: relative;
+    
+    img{
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        overflow: visible;
+    }
+    .img_casa{
+        z-index: 5;
+        width:90%;
+    }
+    .img_azul_claro{
+        z-index: 4;
+        width:100% ;
+        animation-duration: 5s;
+        transition-timing-function: linear;   
+    }
+    
+    .img_verde{
+        z-index: 2;
+         
+    }  
+    .img_azul_oscuro{
+        z-index: 1;
+        width: 105%;
+        animation-duration: 5s;
+        transition-timing-function: linear;    
+    }
+    @keyframes mueve_left{
+        0%{
+            left: 0;
+            bottom: 0;
+        }
+        33%{
+            left: -15px;
+            bottom: 5px;
+
+        }
+        44%{
+            left:3px;
+            bottom:3px;
+        }
+
+        66%{
+            left: 10px;
+            bottom: 5px;
+        }
+        100%{
+            left: 0;
+            bottom: 0;
+        }
+    
+     }
+     @keyframes mueve_right{
+        0%{
+            right: 0;
+            
+        }
+        33%{
+            right: -15px;
+            
+        }
+        66%{
+            right: 15px;
+            
+        }
+        100%{
+            right: 0;
+        }
+    }
+    
+}
+.mueve_left{
+    animation-name: mueve_left;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    position: relative;
+}
+.mueve_right{
+    animation-name: mueve_right;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    position: relative;
+}
+           
+.intro_txt{
+    // background-image: url(img/fondo_casito.jpg);
+    // background-size: cover;
+    // background-attachment: fixed;
+    background: rgb(138,233,255);
+    background: linear-gradient(94deg, rgba(138,233,255,1) 0%, rgba(0,185,179,1) 45%, rgba(0,71,195,1) 85%);
+    // height: fit-content;
+    .caja_text{ 
+        width: 70%;
+        padding: 12rem 0rem;
+        padding-bottom: 5rem;
+        text-align: center;
+        @include corte(tablet){
+            flex-basis: 100%;
+            padding-top: 10rem;
+            padding-bottom: 30rem;
+        }
+        @include corte(movil){
+            flex-basis: 100%;
+            padding-top: 10rem;
+            padding-bottom: 15rem;
+        }
+        
+        h2{
+            z-index: 99;
+            color: $dark_blue;
+            padding-left: $sizeS;
+        }
+        p{
+            color: $light_blue;
+        }
+        .btnS{
+            margin-top:$sizeS;
+            background-color: $dark_blue;
+            color: $light_blue;
+            text-align: center;
+            &:hover{
+                background-color: $light_blue;
+                color: darkblue;
+               
+            }
+            
+        }
+    }
+    
+}
+
+.info_med_solar{
+    
+    h1{
+        margin-bottom: $sizeL;
+        @include corte(tablet){
+            margin-bottom: 1rem;
+        }
+        @include corte(movil){
+            margin-bottom: 1rem;
+            
+        }
+    }
+    
+    .wrapper{
+        gap: 3rem;
+        position: relative;
+        margin-bottom: 15rem;
+        margin-top: $sizeL;
+        @include corte(tablet){
+            margin-bottom: 25rem;
+        }
+        @include corte(movil){
+            margin-bottom: 37rem;
+            
+        }
+    }
+    .col.una{
+        width:75%;
+        @include corte(tablet){
+            
+            width: 100%;
+        }
+        @include corte(movil){
+            
+            width: 100%;
+            
+        }
+        img{
+            width: 100%;
+            margin-bottom: $sizeL;
+            border-radius: 1rem;
+        }
+    }
+    
+    .info__texto{
+        position: absolute;
+        top: 71%;
+        right: 0;
+         flex-direction:column;
+         width: 60%;
+         background-color: $light_green;
+         border-radius: 1rem;
+         padding:$sizeM;
+         align-items: flex-start;
+         @include corte(tablet){
+            top: 94%;
+            width: 100%;
+        }
+        @include corte(movil){
+            top: 94%;
+            width: 100%;
+        }
+         h2{
+            margin-top: 0;
+         }
+         i{ 
+            color:$green;
+            margin-right: 0.3rem;
+         }
+         .btnS{
+            text-align: center;
+            @include corte(tablet){
+                align-self: center;
+            }
+            @include corte(movil){
+                align-self: center;
+            }
+            }
+    }
+} 
+.subvenciones{
+    
+    .inf_subv{
+        width:70%;
+        
+        background-color:$light_green;
+        padding: $sizeM;
+        border-radius: 1rem;
+        margin-bottom: $sizeL;
+        @include corte(tablet){
+            width:80%;
+        }
+        @include corte(movil){
+            width:80%;
+        }
+        h3{
+            font-size: 2.6rem;
+            @include corte(tablet){
+                font-size:2rem;
+            }
+            @include corte(movil){
+                font-size: 2rem;
+            }
+        }  
+    }
+
+}
+.beneficios{
+    gap: 2rem;
+    margin-bottom: 10rem;
+    @include corte(tablet){
+        margin-bottom:5rem;
+    }
+    @include corte(movil){
+        margin-bottom: 5rem;
+    }
+    
+    h1{@include corte(tablet){
+        margin-top: 5rem;
+    }
+    @include corte(movil){
+        margin-top: 8rem;
+    }
+        
+    }
+    .columnas_iconos{
+        gap: 3rem;
+    
+    }
+    .col33{
+        width: 32%;
+        flex-direction: column;
+        transition: 1s;
+ 
+        img{
+            width: 40%;
+            margin:2rem;
+            transition:1s;           
+            color: $dark_green;
+            // transition: 1s;
+            // &:hover{
+            //    transform: scale(1);
+            // }
+            
+            @include corte(tablet){
+                width: 30%;
+            }
+            @include corte(movil){
+               width:30%;
+            }
+            
+        }
+        p{
+            margin: 1rem;
+            font-family: $regular;
+            font-size: 2rem;
+            text-align: center;
+        }
+    }
+    
+}
+    
+
+
+.formulario{
+    background-color: $light_green_opacity;
+    background-image: url(img/rejilla1.png);
+    h2{
+        margin-top: 7.5rem;
+        margin-right: 0;
+        margin-left: 0;
+    }
+    .formulario_caja{
+        width: 100%;
+        margin-bottom: $sizeXL;
+        margin-top: 2rem;
+        form{
+            background-color:white;
+            width: 50%;
+            padding: 2.5rem;
+            border-radius: 20px;
+            flex-direction: column;
+            @include corte(tablet){
+                width:90%;
+            }
+            @include corte(movil){
+                width:90%;
+            }
+            
+            label{
+                display: block;
+                font-size: 18px;
+                font-family: $regular;
+                margin-bottom: 0.5rem;
+                margin-top:1rem;
+            
+            }
+            input,textarea, option,select{
+                width:100%;
+                border: none;
+                outline: none;
+                font-size: 16px;
+                border-bottom: none;
+                padding: 15px;
+                border-radius: 1rem;
+                font-family: $light;
+                background-color: $light_green;
+            }
+            input::placeholder, select{
+                font-size: 18px;
+            }
+            input:focus::placeholder{
+                color:transparent;
+            }
+            textarea{
+                min-height: 100px;
+            }
+            .btnS{
+                margin-bottom: 0;
+                padding:14px 56px;
+                @include corte(tablet){
+                    width:100%;
+                    text-align: center;
+                }
+                @include corte(movil){
+                    width:100%;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+footer{
+    .columnas{
+        @include corte(tablet){
+            flex-direction: column;
+            
+        }
+        @include corte(movil){
+           flex-direction: column;
+        }
+
+    }
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    width:100%;
+    
+    background-color: $medium_green;
+    
+    img{
+        width:20%;
+        @include corte(tablet){
+            width:20%;
+            
+        }
+        @include corte(movil){
+            width:20%;
+           
+        }
+        
+        
+    }
+    i{
+        font-size: 3.6rem;
+        color: $light_green;
+        padding: 1rem;
+        @include corte(tablet){
+            font-size: 2rem;
+        }
+        @include corte(movil){
+            font-size: 1.8rem;
+        }
+
+    }
+    .politicas{
+        flex-direction: column;
+        align-self:flex-end;
+        @include corte(tablet){
+            align-self:center;
+            
+        }
+        @include corte(movil){
+            align-self:center;
+        }
+        
+    }
+    p{
+        color: $light_blue;
+        @include corte(tablet){
+            font-size: 1.5rem;
+            padding-right: 2rem;
+        }
+        @include corte(movil){
+            font-size: 1.5rem;
+        }
+
+    }
+}
+
+// Second part AboutUS
+
+.about_us_inf{
+    background: rgb(138,233,255);
+    background: linear-gradient(94deg, rgba(138,233,255,1) 0%, rgba(0,185,179,1) 45%, rgba(0,71,195,1) 85%);
+    
+  }
+ 
+.col50.aboutus{
+    h2{
+        color: $light_blue;
+    }
+    h3{
+        color:$light_blue;
+    }
+    p{
+        color: $light_blue;
+    }
+    @include corte(tablet){
+        padding-bottom: 6rem;
+        padding:50px;
+    }
+    @include corte(movil){
+        padding-bottom: 19rem;
+    }
+}
+.img_animation.aboutus{
+    @include corte(tablet){
+       padding-bottom: 22rem;
+    }
+    @include corte(movil){
+        padding-bottom: 22rem;
+    }
+}
+
+  .history{
+    .inf_history{
+        width: 40%;
+       
+        border-radius: 1rem;
+        margin-bottom: $sizeL;
+        @include corte(tablet){
+            width:60%;
+        }
+        @include corte(movil){
+           width:80%;
+        }
+    }
+  }
+  .process_of_work{
+    background-color:$light_green_opacity;
+    background-image: url(img/rejilla1.png);
+    .col{ @include corte(tablet){
+        flex-direction: column;
+    }
+    @include corte(movil){
+        flex-direction: column;
+    }
+
+    }
+  }
+  .col50{
+    // flex: 1;
+    flex-basis: 48%;
+    @include corte(tablet){
+        flex-basis:95%;
+    }
+    @include corte(movil){
+        flex-basis: 95%;
+    }
+  }
+  
+  .circulos{
+    width: 60%;
+    flex-direction: column;
+    gap: $sizeM;
+    background-color: white;
+    padding: $sizeM;
+    margin-bottom: $sizeL;
+    margin-top: $sizeM;
+    @include corte(tablet){
+        width: 80%;
+    }
+    @include corte(movil){
+       width: 90%;
+    }
+
+  }
+  .circulos h2{
+    margin-top: $sizeM;
+  
+  }
+  .linia{
+    height: fit-content;
+    grid-gap: $sizeS;
+    flex-direction: column;
+    @include corte(tablet){
+        flex-basis: 100%;
+    }
+    @include corte(movil){
+        flex-basis: 100%;
+    }
+  }
+  .circulo{
+    width: 40px;
+    height:40px;
+    background-color: $medium_green;
+    color:$dark_blue;
+    border-radius: 70px;
+    padding: 1rem;
+    box-shadow: rgb(233, 230, 230) 3px 3px;
+    // p{
+    //     padding-left: 1rem;
+    // }
+  }
+.numero_txt{
+    width: 100%;
+   p{
+    margin-left:$sizeS;
+    margin-bottom: 0;
+    font-size: 2rem;
+    &:hover{
+    color: $dark_blue;
+    }
+    }
+}
+.last.instalations{
+    .galeria{
+        flex-direction: column;
+        gap: $sizeM;
+    }
+
+}
+
+.row{
+    gap: $sizeS;
+    @include corte(tablet){
+        flex-direction: column;
+    }
+    @include corte(movil){
+        flex-direction: column;
+
+    }
+    .img_wide{
+        width: 70%;
+        transition: 1s ;
+        &.active{
+            width: 40%;
+        }
+
+        @include corte(tablet){
+            width: 100%;;
+        }
+        @include corte(movil){
+            width: 100%;
+
+        }
+        img{
+            width: 100%;
+            border-radius: 10px;
+        }
+    }
+    .explanation{
+        width: 29%;
+        background-color: $light_green;
+        background-image: url(img/rejilla1.png);
+        border-radius: 1rem;
+        transition: 1s;
+        &.active{
+            width:60%;
+        }
+        &__h3{
+            display: block;
+            &.active{
+                display: none;
+            }
+        }
+
+
+
+
+        // &:hover{
+        //    transform: scale(0.2);
+        // }
+        @include corte(tablet){
+            display: none;
+        }
+        @include corte(movil){
+            display: none;
+        }
+        
+        
+    }
+    .explanation_extended{
+        width: 100%;
+        display:none;
+        transition: 1s ;
+        border-radius: 1rem;
+        padding: 2rem;
+
+
+        &.active{
+            display:block;
+        }
+        
+        @include corte(tablet){
+            display: block;
+        }
+        @include corte(movil){
+            display: block;
+        }
+        
+    }
+}
+
+.positionright{
+    align-self: flex-end;
+}
+
+//Formulario
+.header-large{
+    border-color:white;
+}
+.form-submit-button{
+    background-color: $dark_green;
+    color:$light_blue;
+    text-decoration: none;
+    font-size: 1.6rem;
+    border: 0rem;
+}
+.form-textarea{
+    width: 100%;
+}

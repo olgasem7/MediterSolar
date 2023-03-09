@@ -1,0 +1,20 @@
+@mixin corte($punto){
+    @if $punto == portatil{
+        @media( max-width:1200px){
+            @content;
+        }
+
+    }
+    @else if $punto == tablet{
+        @media(max-width:999px){
+            @content;
+        }
+
+    }
+    @else if $punto == movil{
+        @media(max-width:731px){
+            @content;
+        }
+
+    }      
+};
